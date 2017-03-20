@@ -15,7 +15,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-
+//prefix for variable names: peboMWF_
 class PeboMasonryWidgetFree_Widget extends WP_Widget {
 
 	/**
@@ -38,19 +38,19 @@ class PeboMasonryWidgetFree_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		
 		//Enque the style sheets.
-		wp_enqueue_style('pebo-hover-freestyles', plugin_dir_url(__FILE__) . 'css/freeset.css');
-		wp_enqueue_style('pebo-bootstrap-grid', plugin_dir_url(__FILE__) . 'css/bootstrap_grid_system.min.css');
+		wp_enqueue_style('peboMWF_pebo-hover-freestyles', plugin_dir_url(__FILE__) . 'css/peboMWF_freeset.css');
+		wp_enqueue_style('peboMWF_pebo-bootstrap-grid', plugin_dir_url(__FILE__) . 'css/peboMWF_bootstrap_grid_system.min.css');
 		
-		$maxPostNumber = (isset($instance['maxPostNumber'])) ? $instance['maxPostNumber'] : -1;		
+		$maxPostNumber = (isset($instance['peboMWF_maxPostNumber'])) ? $instance['peboMWF_maxPostNumber'] : -1;		
 		$rand_posts = get_posts( array('numberposts' => $maxPostNumber,	) );
-		$effectsArray = [ "jazz", "ming", "lexi", "duke" ];
-		$randomEffects = ($instance["randomize"]=='on') ? true : false;
+		$effectsArray = [ "peboMWF_jazz", "peboMWF_ming", "peboMWF_lexi", "peboMWF_duke" ];
+		$randomEffects = ($instance["peboMWF_randomize"]=='on') ? true : false;
 		$totalcontent = "";		
-		$selectedEffect =  (isset($instance['Effect'])) ? $instance['Effect'] :  "jazz";
+		$selectedEffect =  (isset($instance['peboMWF_Effect'])) ? $instance['peboMWF_Effect'] :  "peboMWF_jazz";
 
 		/*This is the template for each block of the masonery*/
 		$MasonryBlock = '			
-				<div class="grid" >
+				<div class="peboMWF_grid" >
 					<figure class="effect-PEBO_SELECTED_EFFECT">
 						<img src="PEBO_PATH_TO_IMAGE" alt="img12" style=" height:130%; width: 130%;"/>
 						<figcaption>
@@ -64,8 +64,8 @@ class PeboMasonryWidgetFree_Widget extends WP_Widget {
 				</div>';
 
 		/*Filling the columns from the array*/
-		$NumberOfColumns = isset($instance["Columns"]) ? $instance["Columns"] : '2';
-		$colClass= ColumnsToBSCol($NumberOfColumns);		
+		$NumberOfColumns = isset($instance["peboMWF_Columns"]) ? $instance["peboMWF_Columns"] : '2';
+		$colClass= PeboMWF_ColumnsToBSCol($NumberOfColumns);		
 		/*set the column header for each one*/
 		for ($i = 0; $i < $NumberOfColumns ; $i++) {
 			$columArray[$i] = '<div class="'. $colClass . '" style="padding:0;">';
@@ -123,7 +123,7 @@ class PeboMasonryWidgetFree_Widget extends WP_Widget {
 		/*array of effect names*/
 		$effectsArray = ["jazz", "ming", "lexi", "duke" ];
 
-		$selectedColNum = $instance['Columns'];
+		$selectedColNum = $instance['peboMWF_Columns'];
 		/*Check last selection for the number of colums*/
 		$is2 = ($selectedColNum == 2 ? "selected" : "");
 		$is3 = ($selectedColNum == 3 ? "selected" : "");
@@ -134,35 +134,34 @@ class PeboMasonryWidgetFree_Widget extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, array( 'Columns' => '' ) ); 
 		$title = '<h1>Post Masonry Configuration</h1><br>';		
 		$columsOption = 'Number of columns: 
-		<select id="'. $this->get_field_id("Columns") . '" 
-			name= "' . $this->get_field_name("Columns") . '">
+		<select id="'. $this->get_field_id("peboMWF_Columns") . '" 
+			name= "' . $this->get_field_name("peboMWF_Columns") . '">
   			<option value="2" ' . $is2 . '>2</option>
   			<option value="3" ' . $is3 . '>3</option>
   			<option value="4" ' . $is4 . '>4</option>
   			<option value="5" ' . $is5 . '>5</option>
 		</select><br>';
 		$effectOption = 'Select a hover Effect: 
-		<select id="'. $this->get_field_id("Effect") . '" 
-			name= "' . $this->get_field_name("Effect") . '">';
+		<select id="'. $this->get_field_id("peboMWF_Effect") . '" 
+			name= "' . $this->get_field_name("peboMWF_Effect") . '">';
   		foreach($effectsArray as $option){
-			  $selectedOption = ($instance["Effect"] == $option) ? " selected" : " ";
-			  $effectOption = $effectOption . '<option value="' . $option . '"'.
+			  $selectedOption = ($instance["peboMWF_Effect"] == 'peboMWF_'.$option) ? " selected" : " ";
+			  $effectOption = $effectOption . '<option value="' . 'peboMWF_'.$option . '"'.
 			   $selectedOption . '>' . $option . '</option>';
 		  }
 		$effectOption = $effectOption .'</select><br>';
-		$checked = ($instance["randomize"] == 'on') ? 'checked' : ''; 
+		$checked = ($instance["peboMWF_randomize"] == 'on') ? 'checked' : ''; 
 		$randomizeCheck = '
-		<input id="'. $this->get_field_id("randomize") . '" 
-			name= "' . $this->get_field_name("randomize") . '"type="checkbox" ' . $checked . '> randomize effects<br>
+		<input id="'. $this->get_field_id("peboMWF_randomize") . '" 
+			name= "' . $this->get_field_name("peboMWF_randomize") . '"type="checkbox" ' . $checked . '> randomize effects<br>
 		';
-		$maxPostNumber = '<br>Number of post to show : <input id="'. $this->get_field_id("maxPostNumber") . '" 
-			name= "' . $this->get_field_name("maxPostNumber") .
-			 ' type="text" size = "1" value="'.$instance['maxPostNumber'].'"><br>';
+		$maxPostNumber = '<br>Number of post to show : <input id="'. $this->get_field_id("peboMWF_maxPostNumber") . '" 
+			name= "' . $this->get_field_name("peboMWF_maxPostNumber") .
+			 ' type="text" size = "1" value="'.$instance['peboMWF_maxPostNumber'].'"><br>';
 		$collabLink = '<br>Like this widget? 
 		<a href="http://blog.pebo.pro/shop/wordpress/pebo-wordpress-masonry-pro/"
 		target= "blank">
-		donate and get the PRO VERSION </a><br>';	
-	
+		donate and get the PRO VERSION </a><br>';		
 			
 		echo (
 			$title 
@@ -183,10 +182,10 @@ class PeboMasonryWidgetFree_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		// processes widget options to be saved
 		$instance = $old_instance;
-    	$instance['Columns'] = $new_instance['Columns'];
-		$instance['Effect'] = $new_instance['Effect'];
-		$instance['randomize'] = $new_instance['randomize'];
-		$instance['maxPostNumber'] = $new_instance['maxPostNumber'];
+    	$instance['peboMWF_Columns'] = $new_instance['peboMWF_Columns'];
+		$instance['peboMWF_Effect'] = $new_instance['peboMWF_Effect'];
+		$instance['peboMWF_randomize'] = $new_instance['peboMWF_randomize'];
+		$instance['peboMWF_maxPostNumber'] = $new_instance['peboMWF_maxPostNumber'];
     	return $instance;
 	}
 }
@@ -200,7 +199,7 @@ add_action( 'widgets_init', function(){
 /**
 *Transforms the number of columns selecetd to a proper boostrap class.
 */
-function ColumnsToBSColPeboFree($columns){
+function PeboMWF_ColumnsToBSCol($columns){
 	$valueOf = [
 		"2" => "col-md-6",
 		"3" => "col-md-4",
@@ -209,15 +208,6 @@ function ColumnsToBSColPeboFree($columns){
 		"6" => "col-md-2",
 	];
 	return $valueOf[$columns];	
-}
-
-//Function made for debuging, remove for production
-function DEBUG_free( $data ) {
-    if ( is_array( $data ) )
-        $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
-    else
-        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
-    echo $output;
 }
 
 

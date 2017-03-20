@@ -1,4 +1,4 @@
-.grid {
+.peboMWF_grid {
     position: relative;
     clear: both;
     margin: 0 auto;
@@ -11,7 +11,7 @@
 
 /* Common style */
 
-.grid figure {
+.peboMWF_grid figure {
     position: relative;
     float: left;
     overflow: hidden;
@@ -22,14 +22,14 @@
     width: 100%;
 }
 
-.grid figure img {
+.peboMWF_grid figure img {
     position: relative;
     display: block;
     min-height: 100%;
     opacity: 0.8;
 }
 
-.grid figure figcaption {
+.peboMWF_grid figure figcaption {
     padding: 2em;
     color: #fff;
     text-transform: uppercase;
@@ -38,13 +38,13 @@
     backface-visibility: hidden;
 }
 
-.grid figure figcaption::before,
-.grid figure figcaption::after {
+.peboMWF_grid figure figcaption::before,
+.peboMWF_grid figure figcaption::after {
     pointer-events: none;
 }
 
-.grid figure figcaption,
-.grid figure figcaption>a {
+.peboMWF_grid figure figcaption,
+.peboMWF_grid figure figcaption>a {
     position: absolute;
     top: 0;
     left: 0;
@@ -58,7 +58,7 @@
 
 /* For some effects it will show as a button */
 
-.grid figure figcaption>a {
+.peboMWF_grid figure figcaption>a {
     z-index: 1000;
     text-indent: 200%;
     white-space: nowrap;
@@ -66,23 +66,23 @@
     opacity: 0;
 }
 
-.grid figure h2 {
+.peboMWF_grid figure h2 {
     word-spacing: -0.15em;
     font-weight: 300;
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.grid figure h2 span {
+.peboMWF_grid figure h2 span {
     font-weight: 800;
 }
 
-.grid figure h2,
-.grid figure p {
+.peboMWF_grid figure h2,
+.peboMWF_grid figure p {
     margin: 0;
 }
 
-.grid figure p {
+.peboMWF_grid figure p {
     letter-spacing: 1px;
     font-size: 68.5%;
 }
@@ -94,28 +94,28 @@
 /*---------------*/
 
 
-/***** Jazz *****/
+/***** peboMWF_Jazz *****/
 
 
 /*---------------*/
 
-figure.effect-jazz {
+figure.effect-peboMWF_jazz {
     background: -webkit-linear-gradient(-45deg, #f3cf3f 0%, #f33f58 100%);
     background: linear-gradient(-45deg, #f3cf3f 0%, #f33f58 100%);
 }
 
-figure.effect-jazz img {
+figure.effect-peboMWF_jazz img {
     opacity: 0.9;
 }
 
-figure.effect-jazz figcaption::after,
-figure.effect-jazz img,
-figure.effect-jazz p {
+figure.effect-peboMWF_jazz figcaption::after,
+figure.effect-peboMWF_jazz img,
+figure.effect-peboMWF_jazz p {
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
 }
 
-figure.effect-jazz figcaption::after {
+figure.effect-peboMWF_jazz figcaption::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -131,40 +131,40 @@ figure.effect-jazz figcaption::after {
     transform-origin: 50% 50%;
 }
 
-figure.effect-jazz h2,
-figure.effect-jazz p {
+figure.effect-peboMWF_jazz h2,
+figure.effect-peboMWF_jazz p {
     opacity: 1;
     -webkit-transform: scale3d(0.8, 0.8, 1);
     transform: scale3d(0.8, 0.8, 1);
 }
 
-figure.effect-jazz h2 {
+figure.effect-peboMWF_jazz h2 {
     padding-top: 26%;
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
 }
 
-figure.effect-jazz p {
+figure.effect-peboMWF_jazz p {
     padding: 0.5em 2em;
     text-transform: none;
     font-size: 0.85em;
     opacity: 0;
 }
 
-figure.effect-jazz:hover img {
+figure.effect-peboMWF_jazz:hover img {
     opacity: 0.7;
     -webkit-transform: scale3d(1.05, 1.05, 1);
     transform: scale3d(1.05, 1.05, 1);
 }
 
-figure.effect-jazz:hover figcaption::after {
+figure.effect-peboMWF_jazz:hover figcaption::after {
     opacity: 1;
     -webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
     transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
 }
 
-figure.effect-jazz:hover h2,
-figure.effect-jazz:hover p {
+figure.effect-peboMWF_jazz:hover h2,
+figure.effect-peboMWF_jazz:hover p {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
@@ -174,22 +174,22 @@ figure.effect-jazz:hover p {
 /*---------------*/
 
 
-/***** Ming *****/
+/***** peboMWF_Ming *****/
 
 
 /*---------------*/
 
-figure.effect-ming {
+figure.effect-peboMWF_ming {
     background: #030c17;
 }
 
-figure.effect-ming img {
+figure.effect-peboMWF_ming img {
     opacity: 0.9;
     -webkit-transition: opacity 0.35s;
     transition: opacity 0.35s;
 }
 
-figure.effect-ming figcaption::before {
+figure.effect-peboMWF_ming figcaption::before {
     position: absolute;
     top: 30px;
     right: 30px;
@@ -205,13 +205,13 @@ figure.effect-ming figcaption::before {
     transform: scale3d(1.4, 1.4, 1);
 }
 
-figure.effect-ming h2 {
+figure.effect-peboMWF_ming h2 {
     margin: 20% 0 10px 0;
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
 }
 
-figure.effect-ming p {
+figure.effect-peboMWF_ming p {
     padding: 1em;
     opacity: 0;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -220,23 +220,23 @@ figure.effect-ming p {
     transform: scale(1.5);
 }
 
-figure.effect-ming:hover h2 {
+figure.effect-peboMWF_ming:hover h2 {
     -webkit-transform: scale(0.9);
     transform: scale(0.9);
 }
 
-figure.effect-ming:hover figcaption::before,
-figure.effect-ming:hover p {
+figure.effect-peboMWF_ming:hover figcaption::before,
+figure.effect-peboMWF_ming:hover p {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
 }
 
-figure.effect-ming:hover figcaption {
+figure.effect-peboMWF_ming:hover figcaption {
     background-color: rgba(58, 52, 42, 0);
 }
 
-figure.effect-ming:hover img {
+figure.effect-peboMWF_ming:hover img {
     opacity: 0.4;
 }
 
@@ -244,17 +244,17 @@ figure.effect-ming:hover img {
 /*---------------*/
 
 
-/***** Lexi *****/
+/***** peboMWF_Lexi *****/
 
 
 /*---------------*/
 
-figure.effect-lexi {
+figure.effect-peboMWF_lexi {
     background: -webkit-linear-gradient(-45deg, #000 0%, #fff 100%);
     background: linear-gradient(-45deg, #000 0%, #fff 100%);
 }
 
-figure.effect-lexi img {
+figure.effect-peboMWF_lexi img {
     margin: -10px 0 0 -10px;
     max-width: none;
     width: -webkit-calc(100% + 10px);
@@ -268,13 +268,13 @@ figure.effect-lexi img {
     backface-visibility: hidden;
 }
 
-figure.effect-lexi figcaption::before,
-figure.effect-lexi p {
+figure.effect-peboMWF_lexi figcaption::before,
+figure.effect-peboMWF_lexi p {
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
 }
 
-figure.effect-lexi figcaption::before {
+figure.effect-peboMWF_lexi figcaption::before {
     position: absolute;
     right: -100px;
     bottom: -100px;
@@ -291,13 +291,13 @@ figure.effect-lexi figcaption::before {
     transform-origin: 50% 50%;
 }
 
-figure.effect-lexi:hover img {
+figure.effect-peboMWF_lexi:hover img {
     opacity: 0.6;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
-figure.effect-lexi h2 {
+figure.effect-peboMWF_lexi h2 {
     text-align: left;
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
@@ -305,7 +305,7 @@ figure.effect-lexi h2 {
     transform: translate3d(5px, 5px, 0);
 }
 
-figure.effect-lexi p {
+figure.effect-peboMWF_lexi p {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -317,14 +317,14 @@ figure.effect-lexi p {
     transform: translate3d(20px, 20px, 0);
 }
 
-figure.effect-lexi:hover figcaption::before {
+figure.effect-peboMWF_lexi:hover figcaption::before {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
 }
 
-figure.effect-lexi:hover h2,
-figure.effect-lexi:hover p {
+figure.effect-peboMWF_lexi:hover h2,
+figure.effect-peboMWF_lexi:hover p {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -334,29 +334,29 @@ figure.effect-lexi:hover p {
 /*---------------*/
 
 
-/***** Duke *****/
+/***** peboMWF_Duke *****/
 
 
 /*---------------*/
 
-figure.effect-duke {
+figure.effect-peboMWF_duke {
     background: -webkit-linear-gradient(-45deg, #34495e 0%, #cc6055 100%);
     background: linear-gradient(-45deg, #34495e 0%, #cc6055 100%);
 }
 
-figure.effect-duke img,
-figure.effect-duke p {
+figure.effect-peboMWF_duke img,
+figure.effect-peboMWF_duke p {
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
 }
 
-figure.effect-duke:hover img {
+figure.effect-peboMWF_duke:hover img {
     opacity: 0.1;
     -webkit-transform: scale3d(2, 2, 1);
     transform: scale3d(2, 2, 1);
 }
 
-figure.effect-duke h2 {
+figure.effect-peboMWF_duke h2 {
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
     -webkit-transform: scale3d(0.8, 0.8, 1);
@@ -365,7 +365,7 @@ figure.effect-duke h2 {
     transform-origin: 50% 100%;
 }
 
-figure.effect-duke p {
+figure.effect-peboMWF_duke p {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -381,8 +381,8 @@ figure.effect-duke p {
     transform-origin: 50% -100%;
 }
 
-figure.effect-duke:hover h2,
-figure.effect-duke:hover p {
+figure.effect-peboMWF_duke:hover h2,
+figure.effect-peboMWF_duke:hover p {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
